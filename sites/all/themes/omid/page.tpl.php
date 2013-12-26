@@ -75,7 +75,10 @@
   <?php if ($page['header']): ?>
     <?php print render($page['header']); ?>
   <?php endif; ?>
-  
+  <div id="menu_lang">
+  <?php $block = module_invoke('locale','block_view','language'); 
+      print $block['content'];?>
+  </div>
   <div id="logo">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
@@ -87,7 +90,6 @@
     <?php if ($site_slogan): ?>
       <p id="slogan"><?php print $site_slogan; ?></p>
     <?php endif; ?>
-
   </div>
   <?php if ($main_menu): ?>
     <div  class="ui menu" id="nav">
